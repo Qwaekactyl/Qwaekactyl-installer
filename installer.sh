@@ -126,7 +126,7 @@ reverseproxy_configuration() {
    echo "What is your domain? [example.com]"
    read DOMAIN
    apt install nginx
-   sudo wget -O /etc/nginx/conf.d/Qwaekactyl.conf https://raw.githubusercontent.com/Qwaekactyl/Qwaekactyl-installer-assets/main/NginxHTTPReverseProxy.conf
+   sudo wget -O /etc/nginx/conf.d/Qwaekactyl.conf https://raw.githubusercontent.com/Qwaekactyl/Qwaekactyl-installer/main/NginxHTTPReverseProxy.conf
    sudo apt-get install jq 
    port=$(jq -r '.["website"]["port"]' /var/www/Qwaekactyl/settings.json)
    sed -i 's/PORT/'$port'/g' /etc/nginx/conf.d/Qwaekactyl.conf
@@ -149,7 +149,7 @@ reverseproxy_configuration() {
    fi
 }
 update_check() {
-    latest=$(wget https://raw.githubusercontent.com/Qwaekactyl/Qwaekactyl-installer-assets/main/version.json -q -O -)
+    latest=$(wget https://raw.githubusercontent.com/Qwaekactyl/Qwaekactyl-installer/main/version.json -q -O -)
     #latest='"version": "0.1.2-themes6",'
     version=$(grep -Po '"version":.*?[^\\]",' /var/www/Qwaekactyl/settings.json) 
 

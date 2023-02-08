@@ -4,7 +4,7 @@ echo "====================="
 echo "Qwaekactyl Installer"
 echo "====================="
 echo "Note that this install"
-echo "Is just for ubuntu OS"
+echo "Is just for ubuntu/debain"
 echo ========================================
 
 install_options(){
